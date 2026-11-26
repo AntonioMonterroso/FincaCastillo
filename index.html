@@ -504,7 +504,8 @@ button.estado-chip:active{transform:scale(.97)}
 
 .nav-corto{display:none}
 @media screen and (max-width:899.98px){
-  .menu nav a{font-size:14px;gap:4px;min-height:64px;padding:8px 2px}
+  .menu nav{gap:0;padding:6px 4px}
+  .menu nav a{font-size:14px;gap:4px;min-height:64px;padding:8px 0;min-width:0}
   .menu nav a svg.i{width:26px;height:26px}
   .menu nav .nav-largo{display:none}
   .menu nav .nav-corto{display:inline}
@@ -527,6 +528,66 @@ button.estado-chip:active{transform:scale(.97)}
   .tabla.compacta .solo-icono{min-height:48px;padding:0 12px}
   .fecha-elegir input,.lote-dia select{min-height:56px;font-size:17px}
   #avisito{bottom:104px}
+}
+
+@media screen and (max-width:599.98px){
+  h1{font-size:28px}
+  body{font-size:19px}
+  h2{font-size:24px}
+  h3{font-size:20px}
+  .btn{font-size:19px}
+  .btn-chico{font-size:17px}
+  .chip{font-size:17px}
+  .campo>span,.etq{font-size:16px}
+  .campo small{font-size:16px}
+  .inp,.campo input:not([type=checkbox]):not([type=radio]),.campo select,.campo textarea{font-size:19px}
+  .opcion small{font-size:16px}
+  table.tabla{font-size:18px}
+  .tabla th{font-size:15px}
+  .tabla.compacta{font-size:16px}
+  .tabla.compacta th{font-size:15px}
+  .vacio b{font-size:22px}
+  .dato span{font-size:16px}
+  .dato b{font-size:28px}
+  .estado-chip{font-size:16px}
+  .isla-pildora{font-size:16px}
+  button.estado-chip{font-size:16px}
+  .fecha-elegir input{font-size:18px}
+  .lote-dia select{font-size:18px}
+  .quien b{font-size:20px}
+  .quien span{font-size:16px}
+  .est{font-size:20px}
+  .goce{font-size:16px}
+  .lbl{font-size:15px}
+  .paso input{font-size:20px}
+  .extra{font-size:16px}
+  .tarea select{font-size:16px}
+  .tarea input{font-size:20px}
+  .tarea .unidad{font-size:16px}
+  .tarea .lote-tag{font-size:15px}
+  .gano b{font-size:24px}
+  .gano .bajo{font-size:15px}
+  .desglose .det{font-size:16px}
+  .desglose tr.total td{font-size:20px}
+  .desglose tr.sec td{font-size:15px}
+  .asis-tarj .d{font-size:15px}
+  .asis-tarj .d b{font-size:16px}
+  .leyenda{font-size:16px}
+  .msg{font-size:19px}
+  .historial{font-size:16px}
+  .tel-sub{font-size:20px}
+  .tel-casilla small{font-size:16px}
+  .nube-lista small{font-size:16px}
+  .entrada-marca h1{font-size:32px}
+  .entrada-form h2{font-size:24px}
+  .entrada-msg{font-size:18px}
+  .entrada-form .btn-primario{font-size:19px}
+  .entrada-pie{font-size:16px}
+  .apila-sm td::before,.apila-lg td::before{white-space:normal;overflow-wrap:anywhere}
+  @container vista (max-width:1099.98px){.apila-lg tr{grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px 14px}.apila-lg td{font-size:18px}}
+  @container vista (max-width:719.98px){.apila-sm td::before{font-size:15px}.apila-sm td.titulo{font-size:20px}}
+  @container vista (max-width:1099.98px){.apila-lg td::before{font-size:15px}.apila-lg td.titulo{font-size:21px}.apila-lg td.liquido{font-size:21px}}
+  @container vista (max-width:559.98px){.dato b{font-size:23px}}
 }
 
 </style>
