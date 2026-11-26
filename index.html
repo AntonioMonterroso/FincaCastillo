@@ -502,6 +502,33 @@ button.estado-chip:active{transform:scale(.97)}
   .recibo .r-firma .huella{width:58pt;height:66pt;border:.8pt dashed #555;border-radius:4pt;font-size:7pt;color:#555;display:flex;align-items:flex-end;justify-content:center;padding-bottom:2pt}
 }
 
+.nav-corto{display:none}
+@media screen and (max-width:899.98px){
+  .menu nav a{font-size:14px;gap:4px;min-height:64px;padding:8px 2px}
+  .menu nav a svg.i{width:26px;height:26px}
+  .menu nav .nav-largo{display:none}
+  .menu nav .nav-corto{display:inline}
+  .contenido{padding-bottom:120px}
+}
+@media screen and (max-width:599.98px){
+  .btn{min-height:56px;padding:0 20px;font-size:18px}
+  .btn svg.i{width:22px;height:22px}
+  .btn-chico{min-height:48px;padding:0 16px;font-size:16px}
+  .btn.icono{width:56px;padding:0}
+  .btn.btn-chico.icono{width:48px}
+  .btn-x{width:48px;height:48px}
+  .chip{min-height:48px;padding:0 18px;font-size:16px}
+  button.estado-chip{min-height:48px;font-size:15px}
+  .est{min-height:60px;font-size:18px}
+  .paso button{width:56px;height:56px;font-size:26px}
+  .paso input{width:60px;height:56px}
+  .inp,.campo input:not([type=checkbox]):not([type=radio]),.campo select{min-height:56px}
+  .ver-clave{width:54px}
+  .tabla.compacta .solo-icono{min-height:48px;padding:0 12px}
+  .fecha-elegir input,.lote-dia select{min-height:56px;font-size:17px}
+  #avisito{bottom:104px}
+}
+
 </style>
 </head>
 <body>
@@ -748,11 +775,11 @@ function firmas(){const c=cfg();return`<div class="firmas"><div>Elaboró</div><d
 
 const E={fecha:hoyISO(),buscarHoy:"",marcados:new Set(),pagoTipo:"semanal",pagoIni:null,buscarTrab:"",filtroTrab:"activos",rep:"asistencia",repDesde:null,repHasta:null,repTipo:"todos",repMes:hoyISO().slice(0,7),fichaT:"",fichaAnio:+hoyISO().slice(0,4)};
 
-const NAV=[["hoy","Hoy"],["trabajadores","Trabajadores"],["pagar","Pagar"],["reportes","Reportes"],["tareas","Tareas y lotes"],["config","Configuración"]];
+const NAV=[["hoy","Hoy"],["trabajadores","Trabajadores"],["pagar","Pagar"],["reportes","Reportes"],["tareas","Tareas y lotes","Tareas"],["config","Configuración","Ajustes"]];
 const TIT_NAV={hoy:"Anotar asistencia, horas y tareas del día",trabajadores:"Ver y editar a los trabajadores",pagar:"Calcular y cerrar la planilla",reportes:"Ver asistencia, producción y acumulados",tareas:"Precios de las tareas y lotes de la finca",config:"Datos de la finca, valores de ley y respaldo"};
 const VISTAS={};
 const vistaActual=()=>{const v=location.hash.slice(1);return VISTAS[v]?v:"hoy"};
-function pintarMenu(){$("#nav").innerHTML=NAV.map(([k,t])=>`<a href="#${k}" data-v="${k}" title="${TIT_NAV[k]}">${ic(k)}<span>${t}</span></a>`).join("")}
+function pintarMenu(){$("#nav").innerHTML=NAV.map(([k,t,c])=>`<a href="#${k}" data-v="${k}" title="${TIT_NAV[k]}">${ic(k)}${c?`<span class="nav-largo">${t}</span><span class="nav-corto">${c}</span>`:`<span>${t}</span>`}</a>`).join("")}
 const logoHtml=()=>{const c=cfg();return c.logo?`<img src="${esc(c.logo)}" alt="">`:`<svg viewBox="0 0 24 24" aria-hidden="true">${I.grano}</svg>`};
 function pintarMarca(){const c=cfg();$("#marcaFinca").innerHTML=`<div class="logo">${logoHtml()}</div><div class="txt"><b>${esc(c.nombre)}</b><small>Planilla y personal</small></div>`;document.title=`Planilla · ${c.nombre}`}
 let islaAbierta=false;
